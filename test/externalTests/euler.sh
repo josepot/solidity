@@ -65,6 +65,7 @@ function euler_test
     # them for other presets but that's fine - we want same code run for benchmarks to be comparable.
     # TODO: Remove this when https://github.com/NomicFoundation/hardhat/issues/2453 gets fixed.
     sed -i "/expectError: 'JUNK_UPGRADE_TEST_FAILURE'/d" test/moduleUpgrade.js
+    sed -i "/et\.expect(errMsg)\.to\.contain('e\/collateral-violation');/d" test/flashLoanNative.js
 
     neutralize_package_lock
     neutralize_package_json_hooks
